@@ -126,36 +126,37 @@ action:
   - variables:
       platform: "{{ trigger.platform }}"
       payload:  "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ trigger.payload }}{% endif %}"
+      current_mode: "{{ input.state_entity }}"
   - choose:
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'single' and state_entity == 'event' }}"
+          - "{{ platform == 'mqtt' and payload == 'single' and current_mode == 'event' }}"
         sequence: !input "event_single"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'double' and state_entity == 'event' }}"
+          - "{{ platform == 'mqtt' and payload == 'double' and current_mode == 'event' }}"
         sequence: !input "event_double"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'hold' and state_entity == 'event' }}"
+          - "{{ platform == 'mqtt' and payload == 'hold' and current_mode == 'event' }}"
         sequence: !input "event_hold"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'rotate_left' and state_entity == 'event' }}"
+          - "{{ platform == 'mqtt' and payload == 'rotate_left' and current_mode == 'event' }}"
         sequence: !input "event_rotate_left"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'rotate_right' and state_entity == 'event' }}"
+          - "{{ platform == 'mqtt' and payload == 'rotate_right' and current_mode == 'event' }}"
         sequence: !input "event_rotate_right"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'single' and state_entity == 'command' }}"
+          - "{{ platform == 'mqtt' and payload == 'single' and current_mode == 'command' }}"
         sequence: !input "command_single"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'double' and state_entity == 'command' }}"
+          - "{{ platform == 'mqtt' and payload == 'double' and current_mode == 'command' }}"
         sequence: !input "command_double"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'hold' and state_entity == 'command' }}"
+          - "{{ platform == 'mqtt' and payload == 'hold' and current_mode == 'command' }}"
         sequence: !input "command_hold"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'rotate_left' and state_entity == 'command' }}"
+          - "{{ platform == 'mqtt' and payload == 'rotate_left' and current_mode == 'command' }}"
         sequence: !input "command_rotate_left"
       - conditions:
-          - "{{ platform == 'mqtt' and payload == 'rotate_right' and state_entity == 'command' }}"
+          - "{{ platform == 'mqtt' and payload == 'rotate_right' and current_mode == 'command' }}"
         sequence: !input "command_rotate_right"
       - conditions:
           - "{{ platform == 'state' and payload == 'command' }}"
