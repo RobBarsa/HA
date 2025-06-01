@@ -126,7 +126,7 @@ action:
   - variables:
       platform: "{{ trigger.platform }}"
       payload:  "{% if trigger.to_state|default(false,true) %}{{ trigger.to_state.state }}{% else %}{{ trigger.payload }}{% endif %}"
-      current_mode: "{{ input.state_entity }}"
+      current_mode: !input "state_entity"
   - choose:
       - conditions:
           - "{{ platform == 'mqtt' and payload == 'single' and current_mode == 'event' }}"
