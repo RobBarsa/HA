@@ -4,7 +4,7 @@ blueprint:
   
     Original blueprint by pbergman (https://github.com/pbergman/ha-blueprints/blob/3fc7a18cd8ea34a82f5a955beea13c02a5f805d7/ERS-10TZBVK-AA.yaml).
     
-    Further Updated by RobBarsa ().
+    Further Updated by RobBarsa (https://github.com/RobBarsa/HA/blob/fbe2f1420f4ef15fd73552a9f4d544ed73bffc9b/blueprints/Smart-knob_TS004F_Zigbee2MQTT.yaml).
     
     Version 2025-06-01'
   domain: automation
