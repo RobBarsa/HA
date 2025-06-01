@@ -58,7 +58,7 @@ blueprint:
       default: []
       selector:
         action: {}
-      event_double:
+    command_double:
       name: Command | Double Press
       description: Action to run on double press in command mode
       default: []
