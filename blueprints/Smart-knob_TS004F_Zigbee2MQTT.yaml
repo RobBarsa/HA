@@ -2,7 +2,7 @@ blueprint:
   name: Zigbee2MQTT - TS004F_TZ3000_abrsvsou
   description: >
     Zigbee Smart knob
-    Original blueprint by pbergman (https://github.com/pbergman/ha-blueprints/blob/3fc7a18cd8ea34a82f5a955beea13c02a5f805d7/ERS-10TZBVK-AA.yaml).
+    Fork of the blueprint by pbergman (https://github.com/pbergman/ha-blueprints/blob/3fc7a18cd8ea34a82f5a955beea13c02a5f805d7/ERS-10TZBVK-AA.yaml).
     Adapted and modified to meet the provided set of features of this smart know model.
     Version 2025-06-01
   domain: automation
